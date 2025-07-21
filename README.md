@@ -34,3 +34,9 @@
 ### Scrapper
 
 https://github.com/assafelovic/gpt-researcher
+
+### TAVILY
+https://app.tavily.com/
+```bash
+curl -X POST 'https://api.tavily.com/search' -H 'Content-Type:application/json' -H 'Authorization: Bearer TOKEN' -d '{"query":"Last News AI Agents"}'
+```
