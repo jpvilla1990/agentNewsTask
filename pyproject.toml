@@ -1,0 +1,21 @@
+[project]
+name = "service"
+version = "0.1.0"
+description = "A FastAPI service that fetches latest news using Tavily API and sends email"
+authors = [
+  { name = "Juan Pablo Villa Serna", email = "jpvilla1990@gmail.com" }
+]
+readme = "README.md"
+dependencies = [
+  "fastapi>=0.111.0",
+  "requests>=2.25.1",
+  "uvicorn[standard]>=0.30.1",
+  "httpx>=0.27.0",
+  "python-dotenv>=1.0.1",
+  "pydantic-settings>=2.10.1",
+  "openai>=1.97.0",
+]
+requires-python = ">=3.9"
+
+[tool.uv.sources]
+service = { workspace = true }

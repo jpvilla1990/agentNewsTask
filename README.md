@@ -6,12 +6,12 @@
 
 <pre lang="text"><code>
 ┌─────────────┐
-│  Scheduler  │────▶ Every week
+│  Searcher   │────▶ https://app.tavily.com/home
 └─────┬───────┘
       │
       ▼
 ┌──────────────┐
-│   Scraper    │────▶ aiagentsdirectory.com
+│   Scraper    │────▶ https://dashboard.scrape.do/
 └─────┬────────┘
       ▼
 ┌──────────────┐
@@ -38,5 +38,5 @@ https://github.com/assafelovic/gpt-researcher
 ### TAVILY
 https://app.tavily.com/
 ```bash
-curl -X POST 'https://api.tavily.com/search' -H 'Content-Type:application/json' -H 'Authorization: Bearer TOKEN' -d '{"query":"Last News AI Agents"}'
+curl -X POST 'https://api.tavily.com/search' -H 'Content-Type:application/json' -H 'Authorization: Bearer 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' -d '{"query":"Last News AI Agents"}'
 ```
