@@ -84,6 +84,15 @@ Assuming the app is in a folder like my_app/:
 ```bash
 bash service/run_app.sh
 ```
+
+Running with docker compose
+
+```bash
+docker-compose up --build
+```
+
+NOTE: A .env file has to be populated
+
 ## API Endpoints
 
 GET /
