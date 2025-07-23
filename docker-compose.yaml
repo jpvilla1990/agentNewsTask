@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  service:
+    build:
+      context: .          # assumes Dockerfile is in the same folder
+      dockerfile: dockerfile
+    container_name: service-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .env:/app/.env            # Optional: bind mount for live code editing
+    restart: always

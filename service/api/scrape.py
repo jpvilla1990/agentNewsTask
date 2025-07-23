@@ -21,11 +21,11 @@ class Scrape(object):
         url : str = f"{self.base_url}"
         params : dict = {
             'token': self.token,
-            'url': queryUrl,
+            'url': f"{queryUrl}",
         }
         response = requests.get(url, params=params)
 
         if response.status_code == 200:
-            return response.content
+            return response.content.decode('utf-8')[:25000]  # Decode the content to a string
         else:
             response.raise_for_status()
