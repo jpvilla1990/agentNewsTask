@@ -2,6 +2,7 @@ import datetime
 import json
 from dotenv import load_dotenv
 from fastapi import FastAPI
+from apscheduler.schedulers.background import BackgroundScheduler
 from api.search import Search
 from api.scrape import Scrape
 from agents.summarizer import Summarizer
@@ -116,6 +117,20 @@ class Main(object):
     
 app = FastAPI()
 main = Main()
+
+scheduler : BackgroundScheduler = BackgroundScheduler()
+
+# This is your endpoint logic (refactored as a function)
+def weekend_task():
+    main.pipeline()
+
+# Schedule the task to run every Saturday at 10:00 AM
+scheduler.add_job(weekend_task, 'cron', day_of_week='wed', hour=18, minute=0)
+scheduler.start()
+
+@app.on_event("shutdown")
+def shutdown_event():
+    scheduler.shutdown()
 
 @app.get("/")
 def read_root():
