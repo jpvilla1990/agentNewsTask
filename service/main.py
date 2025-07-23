@@ -125,12 +125,8 @@ def weekend_task():
     main.pipeline()
 
 # Schedule the task to run every Saturday at 10:00 AM
-scheduler.add_job(weekend_task, 'cron', day_of_week='wed', hour=18, minute=0)
+scheduler.add_job(weekend_task, 'cron', day_of_week='sat', hour=18, minute=0)
 scheduler.start()
-
-@app.on_event("shutdown")
-def shutdown_event():
-    scheduler.shutdown()
 
 @app.get("/")
 def read_root():
