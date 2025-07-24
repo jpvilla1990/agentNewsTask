@@ -130,7 +130,7 @@ scheduler.start()
 
 @app.get("/")
 def read_root():
-    return {"config": main.config, "message": "Welcome to the News AI Agents service!"}
+    return {"message": "Welcome to the News AI Agents service!"}
 
 @app.get("/pipeline", description="Trigger Pipeline to get and send News.")
 def run_pipeline():
